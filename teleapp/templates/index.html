@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+<title>index</title>
+
+{% endblock title %}
+
+
+{% block C1%}
+
+
+{% for x in persons %}
+<h4>ชื่อผู้ใช้ {{ x.user }} permission {{ x.usertype }} </h4>
+{% endfor %}
+
+
+{% endblock C1 %}
