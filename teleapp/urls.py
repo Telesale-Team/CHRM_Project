@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name='index.page'),
     path('dashboard/', views.dashboard),
+    path('add_customer/', views.add_customer),
 
 ]
 

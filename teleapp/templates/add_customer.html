@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+<title>Add_customer</title>
+
+{% endblock title %}
+{% block c0 %}
+<div class="card-body-lg text-center bg-dark text-light" style="margin-top: 10px;">   
+    <h1>Add Customer</h1>
+    <p> รวบรวมข้อมูล ลูกค้า เวลา {{ now }} </p>
+</div>
+{% endblock c0 %}
+
+{% block c1 %}
+
+
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+    <br><div class="row">
+        <div class="col-sm-2">ค้นหาเบอร์ลูกค้าใหม่ :</div>
+        <div class="col-sm-7">	
+            <input type="text" class="form-control" id="name" name="name"><br>
+
+        </div>
+    
+
+        <div class="col-sm-2">	                      
+            <button type="submit" class="btn btn-secondary btn-block">นำไปใช้</button>
+        </div>
+    </div>
+
+
+
+	<div class="row">
+
+
+	    <div class="col-sm-3">
+		    <p>ความสนใจ</p>
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">สล็อต
+			  </label>			 
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check5" name="option5" value="something" >บาคาร่า
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >หวย
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check2">
+				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something" >มวย
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >บอล
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >เกมส์
+			  </label>
+			</div>
+	    </div>
+
+
+	    <div class="col-sm-3">
+
+		<p>เพศ-ช่วงอายุ</p>
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >ชาย
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check2">
+				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">หญิง
+			  </label>
+			</div>
+
+
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >ต่ำกว่า 18 ปี
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >18-39 ปี
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">40-59 ปี
+			  </label>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label" for="check1">
+				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">มากกว่า 60 ปี
+			  </label>
+			</div>
+	    </div>
+
+
+	    <div class="col-sm-3">
+			<p>ประสบการณ์ลูกค้า</p>
+				<div class="form-check">
+					<label class="form-check-label" for="check1">
+						<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">เคยเล่นเว็บพนัน
+				  	</label>
+				</div>
+
+
+				<div class="form-check">
+					<label class="form-check-label" for="check1">
+						<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">ส่ง SMS
+				  	</label>
+				</div>
+
+				<div class="form-group">
+					<label for="detail">บันทึกหมายเหตุ</label>
+					<textarea class="form-control" id="detail" name="detail"></textarea>
+				</div>
+	    </div>
+
+		<div class="col-sm-3">
+				<div class="form-group">
+					  <label for="name">ลงเวลานัดหมาย :</label>
+					  <input type="text" class="form-control" id="name" name="name"><br>
+						
+					  <label for="name">id line:</label>
+					  <input type="text" class="form-control" id="name" name="name">
+				</div>
+		</div>
+
+	
+		<div class="col-sm-12">
+					<button type="submit" class="btn btn-success btn-block " >บันทึกข้อมูล</button>					
+		</div>
+	</div>
+  </form><br>
+
+{% endblock c1 %}

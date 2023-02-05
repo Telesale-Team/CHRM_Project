@@ -14,3 +14,8 @@ def dashboard(request):
     persons = Profile.objects.all()
 
     return render(request,'dashboard.html',{"persons":persons})
+
+def add_customer(request):
+    persons = Profile.objects.all()
+
+    return render(request,'add_customer.html',{"persons":persons})
