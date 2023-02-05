@@ -16,24 +16,46 @@
 {% include 'navbar.html'%}
 
 
-<div class="container-fluit">
+<div class="container-fluid">
+	
 	<div class="row">
-		<div class="col-2">
+		<div class="col-sm-2">
+			<div id="accordion" class="card-body-sm">
 
-			<div id="accordion">
-
-				<div class="card-body-sm">
-					<div class="card-header">
-					<a class="collapsed card-link" data-toggle="collapse" href="#collapse1"><i class="fa-solid fa-layer-group"></i>
-						dashboard
-					</a>
+					<div class="card-header bg-dark">
+							<a class="collapsed card-link" data-toggle="collapse" href="#collapse1"><i class="fas fa-tachometer-alt-average"></i> 
+								dashboard
+							</a>
 					</div>
+
 					<div id="collapse1" class="collapse" data-parent="#accordion">
 
 						<ul>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+							<a class="nav-link" href="/dashboard/"><i class="fas fa-chart-pie"></i> Status Report</a>
+							<a class="nav-link" href="/report/"><i class="fas fa-border-all"></i> Grid Report </a>
+							<a class="nav-link" href="/report/"><i class="fas fa-chart-bar"></i> Bar Report </a>
+							<a class="nav-link" href="/report/"><i class="fas fa-tasks"></i> All Report</a>
+						</ul>
+
+					</div>
+
+
+				<div class="card-body-sm">
+					<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapse0"><i class="fa-solid fa-users"></i> 
+						Administrator
+					</a>
+					</div>
+					<div id="collapse0" class="collapse" data-parent="#accordion">
+
+						<ul>
+							<a class="nav-link" href="#">Add User</a>
+							<a class="nav-link" href="#">Edit User</a>
+							<a class="nav-link" href="#">Import User</a>
+							<a class="nav-link" href="#">Exmport User</a>
+							<a class="nav-link" href="#">Import status</a>
+							<a class="nav-link" href="#">Export status</a>
+							<a class="nav-link" href="#">System Setting</a>
 						</ul>
 
 					</div>
@@ -42,49 +64,67 @@
 				<div class="card-body-sm">
 					<div class="card-header">
 					<a class="collapsed card-link" data-toggle="collapse" href="#collapse2"><i class="fa-solid fa-users"></i> 
-						Administrator
+						IT Support
 					</a>
 					</div>
 					<div id="collapse2" class="collapse" data-parent="#accordion">
 
 						<ul>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+							<a class="nav-link" href="#">Service</a>
+							<a class="nav-link" href="#">Requests Service</a>
+							<a class="nav-link" href="#">Alert User</a>
 						</ul>
 
 					</div>
-				</div>
+				</div>				
 
 				<div class="card-body-sm">
 					<div class="card-header">
-					<a class="collapsed card-link" data-toggle="collapse" href="#collapse3"><i class="fa-solid fa-print"></i>
-						Report
-					</a>
-					</div>
-					<div id="collapse3" class="collapse" data-parent="#accordion">
-
-						<ul>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-						</ul>
-
-					</div>
-				</div>
-
-				<div class="card-body-sm">
-					<div class="card-header">
-					<a class="collapsed card-link" data-toggle="collapse" href="#collapse4"><i class="fa-solid fa-gears"></i> 
-						Setting
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapse4"><i class="fas fa-phone"></i>
+						Telesale
 					</a>
 					</div>
 					<div id="collapse4" class="collapse" data-parent="#accordion">
 
 						<ul>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+							<a class="nav-link" href="#">Search Customer</a>
+							<a class="nav-link" href="#">Add Customer</a>
+							<a class="nav-link" href="#">Customer Details</a>
+							<a class="nav-link" href="#">Report</a>
+						</ul>
+
+					</div>
+				</div>
+
+				<div class="card-body-sm">
+					<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapse5"><i class="fas fa-money-check-alt"></i>
+						Finance
+					</a>
+					</div>
+					<div id="collapse5" class="collapse" data-parent="#accordion">
+
+						<ul>
+							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="#">Link</a>
+						</ul>
+
+					</div>
+				</div>
+
+				<div class="card-body-sm">
+					<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapse7"><i class="fa-solid fa-gears"></i> 
+						Setting
+					</a>
+					</div>
+					<div id="collapse7" class="collapse" data-parent="#accordion">
+
+						<ul>
+							<a class="nav-link" href="#">{{user.id}}</a>
+							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="#">Link</a>
 						</ul>
 
 					</div>
@@ -94,10 +134,17 @@
 
 
 		</div>
+	  	<div class="col-sm-8">
+			<div class="card bg-dark">{% block c0 %} {% endblock c0 %}</div>
+			<div class="card text-center">{% block c1 %}{% endblock c1 %} </div>
+	  	</div>
+	  	<div class="col-sm-2">
+			
+			<div class="card-body-sm">{% block R1 %}{% endblock R1 %}</div>
+			<div class="card-body-sm">{% block R2 %}{% endblock R2 %}</div>	
+			<div class="card-body-sm">{% block R3 %}{% endblock R3 %}</div>
 
-	  <div class="col-8">
-		{% block c1 %}{% endblock c1 %}
-	  </div>
+	  	</div>
 	</div>
-  </div>
+</div>
 </html>
