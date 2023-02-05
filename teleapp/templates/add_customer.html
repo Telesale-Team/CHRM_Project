@@ -7,155 +7,210 @@
 
 {% endblock title %}
 {% block c0 %}
-<div class="card-body-lg text-center bg-dark text-light" style="margin-top: 10px;">   
-    <h1>Add Customer</h1>
-    <p> รวบรวมข้อมูล ลูกค้า เวลา {{ now }} </p>
-</div>
-{% endblock c0 %}
+
+	<br><div class="row">
+		
+		<div class="col-sm-6 text-center text-light">
+			<h3>Add Customer </h3>
+			<p>กรอกรายละเอียดครบ เพื่อใช้ในการทำการวิเคราะห์ลูกค้าต่อไป</p>
+		</div>
+
+		<div class="col-sm-6 text-center text-light ">
+			<h3>สถานะความสำเร็จ</h3>
+			<span class="badge badge-success">Success ( ขายได้ )</span>
+			<span class="badge badge-warning">Warning ( รอนัดโทรกลับ )</span>
+			<span class="badge badge-danger">Danger ( ขายไม่ได้ )</span>
+		</div>
+	</div><br>
+
+{% endblock c0%}
 
 {% block c1 %}
 
-
-<form method="POST" enctype="multipart/form-data">
-
-	{% csrf_token %}
-    <br><div class="row">
-        <div class="col-sm-2">ค้นหาเบอร์ลูกค้าใหม่ :</div>
-        <div class="col-sm-7">	
-            <input type="text" class="form-control" id="name" name="name"><br>
-
-        </div>
-    
-
-        <div class="col-sm-2">	                      
-            <button type="submit" class="btn btn-secondary btn-block">นำไปใช้</button>
-        </div>
-    </div>
-
-
-
-	<div class="row">
-
-
-	    <div class="col-sm-3">
-		    <p>ความสนใจ</p>
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">สล็อต
-			  </label>			 
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check5" name="option5" value="something" >บาคาร่า
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >หวย
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check2">
-				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something" >มวย
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >บอล
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >เกมส์
-			  </label>
-			</div>
-	    </div>
-
-
-	    <div class="col-sm-3">
-
-		<p>เพศ-ช่วงอายุ</p>
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >ชาย
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check2">
-				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">หญิง
-			  </label>
-			</div>
-
-
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >ต่ำกว่า 18 ปี
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >18-39 ปี
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">40-59 ปี
-			  </label>
-			</div>
-
-			<div class="form-check">
-				<label class="form-check-label" for="check1">
-				<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">มากกว่า 60 ปี
-			  </label>
-			</div>
-	    </div>
-
-
-	    <div class="col-sm-3">
-			<p>ประสบการณ์ลูกค้า</p>
-				<div class="form-check">
-					<label class="form-check-label" for="check1">
-						<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">เคยเล่นเว็บพนัน
-				  	</label>
-				</div>
-
-
-				<div class="form-check">
-					<label class="form-check-label" for="check1">
-						<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">ส่ง SMS
-				  	</label>
-				</div>
-
-				<div class="form-group">
-					<label for="detail">บันทึกหมายเหตุ</label>
-					<textarea class="form-control" id="detail" name="detail"></textarea>
-				</div>
-	    </div>
-
-		<div class="col-sm-3">
-				<div class="form-group">
-					  <label for="name">ลงเวลานัดหมาย :</label>
-					  <input type="text" class="form-control" id="name" name="name"><br>
-						
-					  <label for="name">id line:</label>
-					  <input type="text" class="form-control" id="name" name="name">
-				</div>
-		</div>
-
+<br><br>
+<div class="container-fluid">
 	
-		<div class="col-sm-12">
-					<button type="submit" class="btn btn-success btn-block " >บันทึกข้อมูล</button>					
+	<form method="POST" >
+	
+		{% csrf_token %}
+
+		<div class="row">
+
+			<div class="col-sm-2">
+			<span>ความสนใจ</span><hr>		
+	
+				<div class="form-check">
+					<label class="form-check-label" for="slot">
+					<input type="checkbox" class="form-check-input" id="slot" name="slot" value="slot">สล็อต
+					</label>			 
+				</div>
+	
+				<div class="form-check">
+					<label class="form-check-label" for="bacara">
+					<input type="checkbox" class="form-check-input" id="check2" name="bacara" value="bacara" >บาคาร่า
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<label class="form-check-label" for="huay">
+					<input type="checkbox" class="form-check-input" id="check3" name="huay" value="huay" >หวย
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<label class="form-check-label" for="muay">
+					<input type="checkbox" class="form-check-input" id="muay" name="muay" value="muay" >มวย
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<label class="form-check-label" for="ball">
+					<input type="checkbox" class="form-check-input" id="ball" name="ball" value="ball" >บอล
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<label class="form-check-label" for="game">
+					<input type="checkbox" class="form-check-input" id="game" name="game" value="game" >เกมส์
+					</label>
+				</div>
+
+				<div class="input-group mb-3 input-group-sm">
+					<div class="input-group-prepend"><span class="input-group-text">อื่น ๆ </span></div>
+					<input type="text" class="form-control">
+				</div>
+
+			</div>
+			
+
+			<div class="col-sm-2">
+				<span>ช่วงอายุ</span><hr>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="age" value="18">น้อยกว่าเกิน 18 ปี
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="age" value="39" >18-39
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="age" value="59" >40-59
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="age" value="60" >มากกว่า 60 ปี
+					</label>
+				</div>
+
+			</div>
+
+			<div class="col-sm-1">
+	
+				<span>เพศ</span><hr>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="sex" value="M">ชาย
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="sex" value="W" >หญิง
+						</label>
+					</div>				
+				</div>
+	
+	
+				<div class="col-sm-2">
+					<span>กลุ่มนำเล่น</span><hr>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="exp" value="yes" >สนใจ
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="exp" value="no" >ไม่สนใจ
+						</label>
+					</div>
+
+				</div>
+				
+				<div class="col-sm-2">
+					<span>ส่งSMS ?</span><hr>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="sms" value="no">สนใจ
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="sms" value="no" >ไม่สนใจ
+						</label>
+					</div><br>
+					<span>รับโบนัส</span><hr>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="sms" value="no">สนใจ
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="sms" value="no" >ไม่สนใจ
+						</label>
+					</div>
+				</div>
+	
+	
+	
+	
+			<div class="col-sm-3">
+
+				
+				<div class="input-group mb-3 input-group-sm">
+					<div class="input-group-prepend"><span class="input-group-text">เบอร์โทรลูกค้า</span></div>
+					<input type="text" class="form-control">
+				</div>
+
+							
+				<div class="input-group mb-3 input-group-sm">
+					<div class="input-group-prepend"><span class="input-group-text">Line ID</span></div>
+					<input type="text" class="form-control">
+				</div>
+
+				<div class="input-group mb-3 input-group-sm">
+					<div class="input-group-prepend"><span class="input-group-text">เวลาโทรกลับ</span></div>
+					<input type="text" class="form-control">
+				</div>
+							
+							
+
+			</div>
+
+		
+		</div><br>
+			<div class="row">
+			
+				<div class="card-body-sm col-sm-6">
+					<button type="submit" class="btn btn-success btn-block">บันทึกข้อมูล</button>
+				</div>
+				<div class="card-body-sm col-sm-6">
+					<button type="submit" class="btn btn-danger btn-block">ยกเลิก</button>
+				</div>
+			</div>
+
+					
+	</form>
+</div>
+<br>
+		<div class="card-body-sm col-sm-6">
+			<span style="color: red;">!! ข้อควรระวัง !! </span>
+			<li>ความสนใจของลูกค้าเลือกได้มากกว่า 1 ความสนใจ</li>
+			<li>เวลาโทรกลับ และ Line ID หากมีควรกรอกเพื่อเป็นข้อมูลติดต่อกลับ</li>
 		</div>
-	</div>
-  </form><br>
+<br>
 
 {% endblock c1 %}
