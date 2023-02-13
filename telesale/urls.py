@@ -16,8 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from . import settings
+from django.contrib.staticfiles.urls import static,staticfiles_urlpatterns
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("teleapp.urls")),
+    path('login/', auth_views.LoginView.as_view(template_name='html_template/login.html'),name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='html_template/logout.html'),name='logout'),
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static( settings.MEDIA_URL,document_root = settings.MEDIA_ROOT )

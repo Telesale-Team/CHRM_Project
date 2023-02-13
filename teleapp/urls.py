@@ -23,8 +23,11 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name='index.page'),
+    path('register_form/', views.register_form),
+    path('login/', views.login),
     path('dashboard/', views.dashboard),
     path('add_customer/', views.add_customer),
+    
 
 ]
 

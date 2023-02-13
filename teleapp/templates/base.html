@@ -19,7 +19,7 @@
 <div class="container-fluid">
 	
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-2 mb-3">
 			<div id="accordion" class="card-body-sm">
 
 					<div class="card-header bg-dark">
@@ -49,7 +49,7 @@
 					<div id="collapse0" class="collapse" data-parent="#accordion">
 
 						<ul>
-							<a class="nav-link" href="#">Add User</a>
+							<a class="nav-link" href="/register_form">Add User</a>
 							<a class="nav-link" href="#">Edit User</a>
 							<a class="nav-link" href="#">Import User</a>
 							<a class="nav-link" href="#">Exmport User</a>
@@ -122,19 +122,23 @@
 					<div id="collapse7" class="collapse" data-parent="#accordion">
 
 						<ul>
-							<a class="nav-link" href="#">{{user.id}}</a>
-							<a class="nav-link" href="#">Link</a>
-							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="/login">Login</a>
+							<a class="nav-link" href="#">Logout</a>
+							<a class="nav-link" href="/register_form">Register Form</a>
 						</ul>
 
 					</div>
 				</div>
 
 			</div>
+			<div>
+				{% block L1%}
+				{% endblock L1%}
+			</div>
 
 
 		</div>
-	  	<div class="col-sm-8 mb-3 ">
+	  	<div class="col-sm-8 mb-3">
 			<div class="card bg-dark">{% block c0 %} {% endblock c0 %}</div><br>
 			<div class="card ">{% block c1 %}{% endblock c1 %} </div>
 	  	</div>

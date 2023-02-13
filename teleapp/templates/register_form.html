@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+<title>Register</title>
+
+{% endblock title %}
+
+{% block c0 %}
+<div class="jumbotron text-center">
+    <h1>C-HRM Register</h1>
+    <p>สมัครสมาชิกใช้งานระบบ โปรแกรมบริหารจัดการบุคคล</p>
+    <a href="/login">เข้าสู่ระบบ</a>
+  </div>
+
+{% endblock c0 %}
+
+
+{% block c1%}
+<div class="container-fluid">
+    <! ***** หากมีการอัพโหลดไฟล์ ตรงนี้ด้วยสำคัญ >
+    <form method="POST">
+  
+      <!*****จำเป็นต้องใส่หากต้องการป้อนข้อมูลจากหน้าเว็บเข้าเว็บ>
+      {% csrf_token %}
+  
+      <div class="form-group">
+        <label for="first_name">ชื่อผู้ใช้:</label>
+        <input type="text" class="form-control" id="first_name" name="first_name">
+      </div>
+  
+      <div class="form-group">
+        <label for="tel">เบอร์โทรศัพท์:</label>
+        <input type="text" class="form-control" id="tel" name="tel">
+      </div>
+  
+
+      <div class="form-group">
+        <label for="email">อีเมลล์ (ใช้สำหรับ Login ใช้งานระบบ):</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" class="form-control" id="password" name="password">
+      </div>
+
+      <div class="form-group">
+        <label for="password">ยืนยัน รหัสผ่านอีกครั้ง:</label>
+        <input type="password" class="form-control" id="password" name="password">
+      </div>
+  
+        <p>ระบบจะส่ง OTPผ่านทางโทรศัพท์ที่ได้ลงทะเบียนไว้ เพื่อยืนยันตัวตน</p>
+  
+      <button type="submit" class="btn btn-primary">ลงทะเบียน</button>
+      <button type="submit" class="btn btn-secondary">ยกเลิก</button>
+    </form>
+  </div><br>
+
+  {% endblock c1%}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+<title>Add_customer</title>
+
+{% endblock title %}
+{% block c0 %}
+
+<div class="jumbotron text-center">
+  <h1>C-HRM Login</h1>
+  <p>กรอกEmail และ password เพื่อเข้าใช้งานโปรแกรม C-HRM</p>
+  <a href="/register_form">ลงทะเบียน</a>
+</div>
+
+
+{% endblock c0 %}
+
+{% block c1 %}
+  <div class="container">
+    <! ***** หากมีการอัพโหลดไฟล์ ตรงนี้ด้วยสำคัญ >
+    <form method="POST">
+  
+      <!*****จำเป็นต้องใส่หากต้องการป้อนข้อมูลจากหน้าเว็บเข้าเว็บ>
+      {% csrf_token %}
+  
+  
+      <div class="form-group">
+        <label for="username">อีเมลล์ (ใช้สำหรับ Login ใช้งานระบบ):</label>
+        <input type="text" class="form-control" id="username" name="username">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" class="form-control" id="password" name="password">
+      </div>
+  
+      <p>ระบบจะส่ง OTPผ่านทางโทรศัพท์ที่ได้ลงทะเบียนไว้ เพื่อยืนยันตัวตน</p>
+      <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+      <button type="submit" class="btn btn-secondary">ยกเลิก</button>
+    </form>
+  </div><br>
+  {% endblock c1 %}
