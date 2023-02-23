@@ -27,11 +27,12 @@ SECRET_KEY = 'django-insecure-i4fy_la-f%*-%=2zjqc4gbimb-fpto#8=5w#e(9%&t3-#$#^$=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR,'static'
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR,'static','media'
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/','media/')
 
 
 # Application definition
@@ -112,13 +113,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bangkok'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

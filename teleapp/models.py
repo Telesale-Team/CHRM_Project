@@ -8,3 +8,5 @@ class Profile(models.Model):
 		usertype = models.CharField(max_length = 100,default='Telesale')
 		def __str__ (self):
 			return str(self.user)
+		
+print("Models Success")
