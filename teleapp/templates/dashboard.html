@@ -1,194 +1,158 @@
-{% extends "base.html" %}
-
-
-{% block title %}
-
-<title>dashboard</title>
-
-{% endblock title %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  
+<div class="container-fluid">
 
 {% block c0%}
 <div class="card-body-lg text-center bg-dark text-light" style="margin-top: 10px;">   
     <h1>Dashboard</h1>
-    <p> รายงานประจำวันที่ {{ now }} </p>
+    {% for persons in persons %}
+
+    <p> รายงานประจำวันที่ {{ persons.stamp }} </p>
+    {% endfor %}
 </div>
+
 {% endblock c0 %}
 
 {% block c1 %}
 
+
 <div class="text-center ">        
 
     <div class="card-columns">
-        
-        <div class="card bg-dark text-center text-light">
+        {% for persons in persons %}
 
-            <h5>Duckbet</h5>
-            <h1 class="card-text">93</h1>
-            <p>เติมเงิน</p>
+        <div class="card bg-primary text-center text-light ">    
 
-        </div>
-
-
-        <div class="card bg-dark text-center text-light">
-
-            <h5>Mughuay</h5>
-            <h1 class="card-text">15</h1>
-            <p>เติมเงิน</p>
-
-        </div>
-
-        <div class="card bg-dark text-center text-light">
-
-            <h5>สลากไท</h5>
-            <h1 class="card-text">89</h1>
-            <p>ใบ</p>
-
-        </div>
-
-
-        <div class="card bg-dark text-center text-light">
-
-            <h5>Tele Sale Team</h5>
-            <h1 class="card-text">183</h1>
-            <p>เติมเงิน / สมัคร</p>
+            <p><small>Telesale Team</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.telesale_team }}</strong></h1>
+            <p><small></small><small>เติมเงิน / สมัคร</small></p>
 
         </div>
 
         <div class="card bg-success text-center text-light">
 
-            <h5>Community Team</h5>
-            <h1 class="card-text">893</h1>
-            <p>เติมเงิน / สมัคร</p>
+            <p><small>Community Team</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.commu_team1 }}</strong></h1>
+            <p><small></small><small>เติมเงิน / สมัคร</small></p>
 
         </div>
 
-        <div class="card badge-warning text-center text-light">
+        <div class="card bg-info text-center text-light">
 
-            <h5>Online Team</h5>
-            <h1 class="card-text">93</h1>
-            <p>เติมเงิน / สมัคร</p>
+            <p><small>Community Team 2</small> </p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.commu_team2 }}</strong></h1>
+            <p><small></small><small>เติมเงิน / สมัคร</small></p>
+
+        </div>
+
+        <div class="card bg-warning text-center text-light">
+
+            <p><small>Online Team</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.online_team }}</strong></h1>
+            <p><small></small><small>เติมเงิน / สมัคร</small></p>
+
+        </div>
+
+        <div class="card bg-danger text-center text-light">
+
+            <p><small>Mynmar Team</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.mynmar_team }}</strong></h1>
+            <p><small>เติมเงิน / สมัคร</small></p>
 
         </div>
         
-        <div class="card bg-info text-center text-light">
+        <div class="card text-center bg-secondary text-light">
 
-            <h5>จำนวนเบอร์คงเหลือ</h5>
-            <h1 class="card-text">15893</h1>
-            <p>เบอร์</p>
-
-        </div>
-
-        <div class="card bg-dark text-center text-light">
-
-            <h5>คุณภาพเบอร์โทร</h5>
-            <h1 class="card-text">15893</h1>
-            <p>เปอร์เซ็นต์</p>
+            <p><small>Duckbet</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.duckbet }}</strong></h1>
+            <p><small>เติมเงิน / สมัคร</small></p>
 
         </div>
 
-        <div class="card bg-dark text-center text-light">
+    
 
-            <h5>จำนวนผู้สนใจ</h5>
-            <h1 class="card-text">15893</h1>
-            <p>เปอร์เซ็นต์</p>
 
-        </div>
+        <div class="card  bg-secondary text-light">
 
-        <div class="card badge-dark text-center text-light">
-
-            <h5 >จำนวนพนักงานผ่านเกณฑ์</h5>
-            <h1 class="card-text">15893</h1>
-            <p class=" text-light" >เปอร์เซ็นต์</p>
+            <p><small>Mughuay</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.mughauy }}</strong></h1>
+            <p><small>เติมเงิน / สมัคร</small></p>
 
         </div>
 
-        <div class="card badge-danger text-center text-light">
+        <div class="card bg-secondary text-light">
 
-            <h5 class=" text-light">จำนวนพนักงานยังไม่ผ่านเกณฑ์</h5>
-            <h1 class="card-text">2</h1>
-            <p class=" text-light">คน</p>
+            <p><small>Slakthai Ban</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.slak_thai }}</strong></h1>
+            <p><small>ใบ</small></p>
 
         </div>
+
+        
+        <div class="card bg-secondary text-light">
+
+            <p><small>Number Phone</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.phone_number }}</strong></h1>
+            <p><small>เบอร์</small></p>
+
+        </div>
+
+        <div class="card  bg-secondary text-light">
+
+            <p><small>Telephon Quality</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.quality }}</strong></h1>
+            <p><small>เปอร์เซ็นต์</small></p>
+
+        </div>
+
+        <div class="card bg-secondary text-light">
+
+            <p><small>Interest</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.interest }}</strong></h1>
+            <p><small>คน</small></p>
+
+        </div>
+
+        <div class="card bg-secondary text-light ">
+
+            <p><small>SMS</small></p>
+            <h1 class="card-text" style="color: black;"><strong>{{ persons.inwork }}</strong></h1>
+            <p><small>ครั้ง</small></p>
+
+        </div>
+
+        <div class="card bg-secondary text-light ">
+
+            <p><small>พนักงานขาด</small></p>
+            <h1 class="card-text" style="color: rgb(81, 255, 0);"><strong>{{ persons.absent }}</strong></h1>
+            <p><small>เปอร์เซ็นต์</small></p>
+
+        </div>
+
+        <div class="card bg-secondary text-light">
+
+            <p><small>พนักงานทั้งหมด</small></p>
+            <h1 class="card-text" style="color: rgb(81, 255, 0);"><strong>{{ persons.employee }}</strong></h1>
+            <p><small>คน</small></p>
+
+        </div>
+        {% endfor %}
+
+        
 
 
     </div>
 </div><br>
 
 {% endblock c1 %}
-{% block c2%}
-
-
-
-
-
-{% endblock c2 %}
-
-{% block R1 %}
-<div class="card text-center"> 
-    <table class="table ">
-        <thead class="bg-dark ">
-            <tr class="table text-light">
-                <th>ผลิตภัณฑ์</th>
-                <th>เติมเงิน</th>
-            </tr>
-        </thead>
-
-
-        <tbody>
-            <tr >
-                <td>สลากไทย</td>
-                <td>150</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-{% endblock R1%}
-
-{% block R2 %}
-<br>
-<div class="card text-center"> 
-    <table class="table ">
-        <thead class="bg-dark ">
-            <tr class="table text-light text-center">
-                <th>อันดับ</th>
-                <th>สลากไท</th>
-                <th>จำนวน</th>
-            </tr>
-        </thead>
-
-
-        <tbody>
-            <tr class="table text-center">
-                <td>{{user}}</td>
-                <td>สลากไทย</td>
-                <td>150</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-{% endblock R2 %}
-
-{% block R3 %}
-<br>
-<div class="card text-center"> 
-    <table class="table ">
-        <thead class="bg-dark ">
-            <tr class="table text-light text-center">
-                <th>อันดับ</th>
-                <th>ดักเบ็ท</th>
-                <th>จำนวน</th>
-            </tr>
-        </thead>
-
-
-        <tbody>
-            <tr class="table text-center">
-                <td>{{ user }}</td>
-                <td>20 คน</td>
-                <td>150 บาท</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-{% endblock R3 %}

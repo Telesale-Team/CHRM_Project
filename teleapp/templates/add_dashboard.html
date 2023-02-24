@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+<title>Add_customer</title>
+
+{% endblock title %}
+
+
+{% block c0 %}
+
+<div class="jumbotron text-center">
+    {% for persons in persons%}
+    <h1>Add Dashboard</h1>
+    <p><small>กรอกข้อมูลเก็บเข้าสู่ระบบฐานข้อมูล</small></p>
+    <strong><p>เพิ่มรายงานผลประจำวันที่ {{persons.stamp}}</p></strong>
+  </div>
+  {% endfor %}
+
+{% endblock c0%}
+
+
+
+{% block c1%}
+
+<div class="container-fluid" style="margin-top: 15px;">
+    <form method="POST">
+      {% csrf_token %}      
+        <div class="row">
+
+            <div class="col-sm-3">
+                <div class="input-group mb-3 input-group-sm ">
+                    <div class="input-group-prepend ">
+                    <span class="input-group-text badge badge-dark">Telesale Team&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                    <span class="input-group-text badge badge-dark">Commu Team1</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                    <span class="input-group-text badge badge-dark">Commu Team2</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>
+                
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                    <span class="input-group-text badge badge-dark">&nbsp;&nbsp;Online Team&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                    <span class="input-group-text badge badge-dark">Mynmar Team&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+            </div>            
+
+            <div class="col-sm-3">
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">Duckbet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">Mughuay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">Slak Thai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>
+                
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">PhoneNumber</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">Quality&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">Interest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>                
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend  ">
+                        <span class="input-group-text badge badge-dark">In work&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>
+                
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                    <span class="input-group-text badge badge-dark">Absense&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-dark">Employee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-secondaty">None Item</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-secondaty">None Item</span>
+                    </div>
+                    <input type="number" class="form-control">                    
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-secondaty">None Item</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-secondaty">None Item</span>
+                    </div>
+                    <input type="number" class="form-control">
+                    
+                </div>
+                
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-secondaty">None Item</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text badge badge-secondaty">None Item</span>
+                    </div>
+                    <input type="number" class="form-control">                
+                </div>
+                
+            </div>            
+        </div>
+        <button type="submit" class="btn btn-success btn-sm btn-block">บันทึกข้อมูล</button>
+
+    </form>
+    <br>
+</div>
+{% endblock c1 %}

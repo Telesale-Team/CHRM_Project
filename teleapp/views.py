@@ -16,20 +16,24 @@ def index(request):
 
 def login(request):
     persons = Profile.objects.all()
-
     return render(request,'login.html',{"persons":persons})
 
-def dashboard(request):
-    persons = Profile.objects.all()
 
+def dashboard(request):
+    persons = TeamStat.objects.all()
     return render(request,'dashboard.html',{"persons":persons})
+
 
 def add_customer(request):
     persons = Profile.objects.all()
-
     return render(request,'add_customer.html',{"persons":persons})
+
 
 def register_form(request):
     persons = Profile.objects.all()
-
     return render(request,'register_form.html',{"persons":persons})
+
+
+def add_dashboard(request):
+    persons = TeamStat.objects.all()
+    return render(request,'add_dashboard.html',{"persons":persons})
