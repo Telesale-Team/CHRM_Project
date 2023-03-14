@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% block title %}
+	{% block title %}
 
-  <title>Add_customer</title>
-  
-  {% endblock title %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Add_customer</title>
+	
+	{% endblock title %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-
-{% block c0 %}
-
-<div class="jumbotron text-center">
-  <h1>C-HRM Login</h1>
-  <p>กรอกEmail และ password เพื่อเข้าใช้งานโปรแกรม C-HRM</p>
-  <a href="/register_form">ลงทะเบียน</a>
-</div>
-
-
-{% endblock c0 %}
-
 {% block c1 %}
-  <div class="container">
-    <! ***** หากมีการอัพโหลดไฟล์ ตรงนี้ด้วยสำคัญ >
-    <form method="POST">
-  
-      <!*****จำเป็นต้องใส่หากต้องการป้อนข้อมูลจากหน้าเว็บเข้าเว็บ>
-      {% csrf_token %}
-  
-  
-      <div class="form-group">
-        <label for="username">อีเมลล์ (ใช้สำหรับ Login ใช้งานระบบ):</label>
-        <input type="text" class="form-control" id="username" name="username">
-      </div>
-  
-      <div class="form-group">
-        <label for="password">รหัสผ่าน:</label>
-        <input type="password" class="form-control" id="password" name="password">
-      </div>
-  
-      <p>ระบบจะส่ง OTPผ่านทางโทรศัพท์ที่ได้ลงทะเบียนไว้ เพื่อยืนยันตัวตน</p>
-      <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
-      <button type="submit" class="btn btn-secondary">ยกเลิก</button>
-    </form>
-  </div><br>
-  {% endblock c1 %}
+	<div class="container mt-5">
+		{% csrf_token %}
+	<form method="POST">			
+			<div class="row">
+				<div class="col-sm-4">
+					
+
+				</div>
+				
+				<div class="col-sm-4">
+					<div class="container">
+						<h3 class="text-center">เข้าสู่ระบบ</h3><br>
+						<div class="card">
+							<div class="card-body">
+
+								<div class="form-group ">
+									<label for="username"><small>ชื่อผู้ใช้ : (Email Login)</small></label>
+									<input type="text" class="form-control" id="username" name="username">
+								</div>
+
+								<div class="form-group ">
+									<small><label for="password">รหัสผ่าน:</label></small>
+										<input type="password" class="form-control" id="password" name="password">
+									</div>
+
+								<button type="submit" class="btn btn-success btn-block">เข้าสู่ระบบ</button><br>
+
+								<div class="row">
+										<div class="col-sm-6 text-center"><small class="btn-sm-4"><a href="/register_form">สมัครสมาชิก </a></small></div>
+										
+										<div class="col-sm-6 text-center"><small class="btn-sm-4"><a href="#">ลืมรหัสผ่าน </a>  </small></div>
+								</div> 
+																	
+							</div>
+						</div>
+					</div>
+				</div>
+		
+	</form>
+	</div><br>
+</body> 
+{% endblock c1 %}

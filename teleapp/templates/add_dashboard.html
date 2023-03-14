@@ -10,14 +10,6 @@
 
 {% block c0 %}
 
-<div class="jumbotron text-center">
-    {% for persons in persons%}
-    <h1>Add Dashboard</h1>
-    <p><small>กรอกข้อมูลเก็บเข้าสู่ระบบฐานข้อมูล</small></p>
-    <strong><p>เพิ่มรายงานผลประจำวันที่ {{persons.stamp}}</p></strong>
-  </div>
-  {% endfor %}
-
 {% endblock c0%}
 
 
@@ -34,7 +26,7 @@
                     <div class="input-group-prepend ">
                     <span class="input-group-text badge badge-dark">Telesale Team&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>
 
@@ -42,14 +34,14 @@
                     <div class="input-group-prepend ">
                     <span class="input-group-text badge badge-dark">Commu Team1</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                     <span class="input-group-text badge badge-dark">Commu Team2</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>
                 
@@ -57,14 +49,14 @@
                     <div class="input-group-prepend ">
                     <span class="input-group-text badge badge-dark">&nbsp;&nbsp;Online Team&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                     <span class="input-group-text badge badge-dark">Mynmar Team&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
             </div>            
 
@@ -73,7 +65,7 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">Duckbet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>
 
@@ -81,14 +73,14 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">Mughuay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">Slak Thai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>
                 
@@ -96,14 +88,14 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">PhoneNumber</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">Quality&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
             </div>
 
@@ -113,7 +105,7 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">Interest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>                
 
@@ -121,7 +113,7 @@
                     <div class="input-group-prepend  ">
                         <span class="input-group-text badge badge-dark">In work&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>
                 
@@ -129,21 +121,21 @@
                     <div class="input-group-prepend ">
                     <span class="input-group-text badge badge-dark">Absense&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-dark">Employee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-secondaty">None Item</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
             </div>
 
@@ -152,21 +144,21 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-secondaty">None Item</span>
                     </div>
-                    <input type="number" class="form-control">                    
+                    <input type="number" min="0" class="form-control">                    
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-secondaty">None Item</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-secondaty">None Item</span>
                     </div>
-                    <input type="number" class="form-control">
+                    <input type="number" min="0" class="form-control">
                     
                 </div>
                 
@@ -174,14 +166,14 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-secondaty">None Item</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
 
                 <div class="input-group mb-3 input-group-sm">
                     <div class="input-group-prepend ">
                         <span class="input-group-text badge badge-secondaty">None Item</span>
                     </div>
-                    <input type="number" class="form-control">                
+                    <input type="number" min="0" class="form-control">                
                 </div>
                 
             </div>            

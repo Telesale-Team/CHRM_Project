@@ -8,151 +8,66 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/1f1f20f46c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
-<div class="container-fluid">
+	{% block c0 %}
+<div class="container-fluid ">
 
-{% block c0%}
-<div class="card-body-lg text-center bg-dark text-light" style="margin-top: 10px;">   
-    <h1>Dashboard</h1>
-    {% for persons in persons %}
+	
+	<div class="row ">
+		{% for i in team%}
+		<div class="col-sm-4 mb-2" style="text-align: center;" >	
+			<div class="card ">
+				
+				<div class="card-body ">
+					<h4> อันดับทีม :  <span class="badge badge-success">{{ i.team}} </span></h4>
+					<div class="row">
 
-    <p> รายงานประจำวันที่ {{ persons.stamp }} </p>
-    {% endfor %}
+						<div class="col-sm-2 bg-secondary " >
+
+							<br><i class='fas fa-users' style='font-size:15px'></i><span class="badge badge-success">{{ i.member}}</span><hr>							
+							<i class='fas fa-file-invoice-dollar' style='font-size:15px'></i><smal><span class="badge badge-danger">{{i.room_fee}}</span></smal><hr>							
+							<i class='fas fa-users' style='font-size:15px' ></i><span class="badge badge-info">{{ i.income}}</span><hr>
+							<i class='fas fa-hand-holding-usd' style='font-size:15px'></i><span class="badge badge-warning">{{ i.expenses }}</span><hr>
+							<i class='fas fa-hand-holding-usd' style='font-size:15px'></i><span class="badge badge-warning">{{ i.total }}</span><hr>
+
+							
+						</div>
+						
+						
+						<div class="col-sm-8 bg-dark text-light" >
+							 
+							<h1><span class="badge badge-info">{{ i.thailotto }}</span></h1>					
+						</div>
+
+
+						<div class="col-sm-2 bg-secondary" >
+							
+							<br><i class='fas fa-users' style='font-size:15px'></i><span class="badge badge-dark">thailotto</span><hr>
+							<i class='fas fa-users' style='font-size:15px'></i><span class="badge badge-dark">Mughuay</span><hr>
+							<i class='fas fa-users' style='font-size:15px'></i><span class="badge badge-dark">Duckbet</span><hr>
+							<i class='fas fa-users' style='font-size:15px'></i><span class="badge badge-dark">2</span><hr>
+
+						</div>
+					</div>
+				</div>	
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	
+		
 </div>
-
 {% endblock c0 %}
-
 {% block c1 %}
 
 
-<div class="text-center ">        
-
-    <div class="card-columns">
-        {% for persons in persons %}
-
-        <div class="card bg-primary text-center text-light ">    
-
-            <p><small>Telesale Team</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.telesale_team }}</strong></h1>
-            <p><small></small><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-
-        <div class="card bg-success text-center text-light">
-
-            <p><small>Community Team</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.commu_team1 }}</strong></h1>
-            <p><small></small><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-
-        <div class="card bg-info text-center text-light">
-
-            <p><small>Community Team 2</small> </p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.commu_team2 }}</strong></h1>
-            <p><small></small><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-
-        <div class="card bg-warning text-center text-light">
-
-            <p><small>Online Team</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.online_team }}</strong></h1>
-            <p><small></small><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-
-        <div class="card bg-danger text-center text-light">
-
-            <p><small>Mynmar Team</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.mynmar_team }}</strong></h1>
-            <p><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-        
-        <div class="card text-center bg-secondary text-light">
-
-            <p><small>Duckbet</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.duckbet }}</strong></h1>
-            <p><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-
-    
-
-
-        <div class="card  bg-secondary text-light">
-
-            <p><small>Mughuay</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.mughauy }}</strong></h1>
-            <p><small>เติมเงิน / สมัคร</small></p>
-
-        </div>
-
-        <div class="card bg-secondary text-light">
-
-            <p><small>Slakthai Ban</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.slak_thai }}</strong></h1>
-            <p><small>ใบ</small></p>
-
-        </div>
-
-        
-        <div class="card bg-secondary text-light">
-
-            <p><small>Number Phone</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.phone_number }}</strong></h1>
-            <p><small>เบอร์</small></p>
-
-        </div>
-
-        <div class="card  bg-secondary text-light">
-
-            <p><small>Telephon Quality</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.quality }}</strong></h1>
-            <p><small>เปอร์เซ็นต์</small></p>
-
-        </div>
-
-        <div class="card bg-secondary text-light">
-
-            <p><small>Interest</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.interest }}</strong></h1>
-            <p><small>คน</small></p>
-
-        </div>
-
-        <div class="card bg-secondary text-light ">
-
-            <p><small>SMS</small></p>
-            <h1 class="card-text" style="color: black;"><strong>{{ persons.inwork }}</strong></h1>
-            <p><small>ครั้ง</small></p>
-
-        </div>
-
-        <div class="card bg-secondary text-light ">
-
-            <p><small>พนักงานขาด</small></p>
-            <h1 class="card-text" style="color: rgb(81, 255, 0);"><strong>{{ persons.absent }}</strong></h1>
-            <p><small>เปอร์เซ็นต์</small></p>
-
-        </div>
-
-        <div class="card bg-secondary text-light">
-
-            <p><small>พนักงานทั้งหมด</small></p>
-            <h1 class="card-text" style="color: rgb(81, 255, 0);"><strong>{{ persons.employee }}</strong></h1>
-            <p><small>คน</small></p>
-
-        </div>
-        {% endfor %}
-
-        
-
-
-    </div>
-</div><br>
 
 {% endblock c1 %}
+
+
+
+
+
